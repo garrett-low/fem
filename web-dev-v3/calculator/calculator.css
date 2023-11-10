@@ -1,0 +1,18 @@
+.calc-body {
+    display: grid;
+    grid-template-columns: repeat(4, 4em);
+    grid-template-rows: repeat(6, 4em);
+    /* max-width: 40em; */
+}
+
+.col-span-two {
+    grid-column-end: span 2;
+}
+
+.col-span-three {
+    grid-column-end: span 3;
+}
+
+.col-span-four {
+    grid-column-end: span 4;
+}
