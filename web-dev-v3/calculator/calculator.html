@@ -7,15 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>calculator</title>
     <link rel="stylesheet" href="./calculator.css">
+    <script defer src="./calculator_behavior.js"></script>
 </head>
 
 <body>
     <div class="calc-body">
-        <input class="col-span-four" type="text" />
-        <!-- 1st row -->
+        <input id="calc-screen" class="col-span-four" type="text" readonly />
+        <!-- 2nd row -->
+        <!-- <div class="calc-button-wrapper"> -->
         <button class="col-span-two">C</button>
         <button class="calc-btn">&lt;==</button>
-        <button class="">/</button>
+        <button class="calc-btn">/</button>
         <!-- 3rd row -->
         <button class="calc-btn">7</button>
         <button class="calc-btn">8</button>
@@ -34,7 +36,10 @@
         <!-- 6th row -->
         <button class="col-span-three">0</button>
         <button class="calc-btn">=</button>
+        <!-- </div> -->
+        <div class="debug-console"></div>
     </div>
+
 </body>
 
 </html>

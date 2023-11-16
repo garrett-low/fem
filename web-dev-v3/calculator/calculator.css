@@ -1,7 +1,12 @@
 .calc-body {
     display: grid;
+    max-width: 40em;
     grid-template-columns: repeat(4, 4em);
     grid-template-rows: repeat(6, 4em);
+}
+
+.calc-button-wrapper {
+    /* display: subgrid; */
     /* max-width: 40em; */
 }
 
