@@ -4,8 +4,20 @@ const calcBody = document.querySelector(".calc-body");
 /** @type {HTMLElement} */
 // const calcButtonWrapper = document.querySelector(".calc-button-wrapper");
 
-/** @type {HTMLElement} */
+/** @type {HTMLTextAreaElement} */
 const calcScreen = document.querySelector("#calc-screen");
+
+/** */
+let operandObservable = {
+    __value: "",
+    get value() {
+        return this.__value;
+    },
+    set value(newValue) {
+        this.__value = newValue;
+        calcScreen.value = this.__value;
+    },
+};
 
 document.addEventListener("keydown", btnKeyDownHandler);
 
@@ -26,14 +38,18 @@ function btnKeyDownHandler(event) {
         case '8':
         case '9':
         case '0':
-            calcScreen.value += keyUpper;
+            // calcScreen.value += keyUpper;
+            operandObservable.value += keyUpper;
             break;
         case 'C':
-            calcScreen.value = '';
+            // calcScreen.value = '';
+            operandObservable.value = "";
             break;
         default:
             break;
     }
+    // console.log(operandObservable.value);
+    // console.log(calcScreen.value);
 }
 
 function resetState() {
