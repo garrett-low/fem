@@ -41,11 +41,11 @@ function clickBtnHandler(event) {
         return;
     }
 
-    const calcButtonValue = event.target.innerText.toUpperCase();
+    const keyUpper = event.target.innerText.toUpperCase();
 
     // console.log(calcButtonValue); // testing
     
-    doButton(calcButtonValue);
+    doButton(keyUpper);
 }
 
 /**
