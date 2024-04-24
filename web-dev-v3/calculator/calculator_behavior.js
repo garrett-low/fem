@@ -28,7 +28,25 @@ let operator = "";
 /** @type {Array.<number>} */
 let operandList = [];
 
+document.addEventListener("click", clickBtnHandler);
 document.addEventListener("keydown", btnKeyDownHandler);
+
+/**
+ * 
+ * @param {PointerEvent} event 
+ */
+function clickBtnHandler(event) {
+    const element = event.target;
+    if (!element instanceof HTMLButtonElement) {
+        return;
+    }
+
+    const calcButtonValue = event.target.innerText.toUpperCase();
+
+    // console.log(calcButtonValue); // testing
+    
+    doButton(calcButtonValue);
+}
 
 /**
  * 
@@ -36,7 +54,18 @@ document.addEventListener("keydown", btnKeyDownHandler);
  */
 function btnKeyDownHandler(event) {
     const keyUpper = event.key.toUpperCase();
+    // console.log(keyUpper);
+
+    doButton(keyUpper);
+}
+
+/**
+ * 
+ * @param {string} keyUpper 
+ */
+function doButton(keyUpper) {
     console.log(keyUpper);
+
     switch (keyUpper) {
         case '1':
         case '2':
@@ -48,7 +77,7 @@ function btnKeyDownHandler(event) {
         case '8':
         case '9':
         case '0':
-            operandObservable.value += event.key;
+            operandObservable.value += keyUpper;
             break;
         case 'ESCAPE':
         case 'CLEAR':
@@ -70,8 +99,9 @@ function btnKeyDownHandler(event) {
         // break;
         case 'DIVIDE':
         case '/':
-            handleOperator(event.key);
+            handleOperator(keyUpper);
             break;
+        case '<==':
         case 'BACKSPACE':
             handleBackspace();
             break;
