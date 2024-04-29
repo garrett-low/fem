@@ -42,9 +42,6 @@ function clickBtnHandler(event) {
     }
 
     const keyUpper = event.target.innerText.toUpperCase();
-
-    // console.log(calcButtonValue); // testing
-    
     doButton(keyUpper);
 }
 
@@ -54,7 +51,6 @@ function clickBtnHandler(event) {
  */
 function btnKeyDownHandler(event) {
     const keyUpper = event.key.toUpperCase();
-    // console.log(keyUpper);
 
     doButton(keyUpper);
 }
